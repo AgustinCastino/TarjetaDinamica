@@ -34,5 +34,16 @@ function validarTecla($input,e){
 
         $input.value = palabraCorregida
     }
+
+    escribirTecla($input.className, $input.value)
+}
+
+// Escribe en la tarjeta
+function escribirTecla(inputClassName, datoAEscribir){
+    
+    // Se utiliza el className ya que este es compartido entre el inpu y los datos de la tarjeta
+    // De esta forma la misma funcion edita toda la informacion
+    let $informacion = document.querySelector(`#tarjeta .${inputClassName}`)
+    $informacion.innerText = datoAEscribir
 }
 
