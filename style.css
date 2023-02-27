@@ -1,11 +1,56 @@
+h1{
+    text-align: center;
+}
+
+p{
+    margin: 8px;
+}
+
 #tarjeta{
     border: 2px solid black;
-    height: 150px;
-    width: 300px;
+    border-radius: 5px;
+
+    height: 200px;
+    width: 400px;
+
+    margin: auto;
+    margin-bottom: 5px;    
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.contenedorDatosTarjeta{
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100px;
+
+}
+
+#tarjeta .contenedorDatosTarjeta div{
+    display: flex;
+
+    margin-left: 10px;
+}
+
+#tarjeta .fechas{
+    justify-content: space-between;
+    width: 60%;
+}
+
+#tarjeta .identificacion .nombre{
+    margin-left: 15px;
+    
 }
 
 #inputsUsuario{
     border: 2px solid black;
+    border-radius: 5px;
+
+    margin: auto;
 
     height: 300px;
     width: 300px;

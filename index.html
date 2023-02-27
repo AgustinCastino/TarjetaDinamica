@@ -13,8 +13,24 @@
     <h1> Creá tu Tarjeta </h1>
 
     <div id="tarjeta">
-        <p id="nombreTarjeta" class="nombre"></p>
-        <p id="nombreTarjeta" class="apellido"></p>
+
+        <div class="contenedorDatosTarjeta">
+
+            <div class="numerosTarjeta">
+                <p> XXXX XXXX XXXX XXXX</p>
+            </div>
+    
+            <div class="fechas">
+                <p id="fechaEmision">Desde 02/23</p>
+                <p id="fechaVencimiento"> Hasta 02/25</p>
+            </div>
+    
+            <div class="identificacion">
+                <p id="nombreTarjeta" class="apellido">Apellido</p>
+                <p id="nombreTarjeta" class="nombre"> Nombre </p>
+            </div>
+        </div>
+
 
     </div>
 
@@ -32,6 +48,9 @@
         <div id="disenio">
             <label for=""> Color </label>
             <input type="text" id="color" maxlength="6">
+
+            <label for=""> Color caractéres</label>
+            <input type="text" id="colorCaracteres" maxlength="6">
         </div>
 
     </section>
