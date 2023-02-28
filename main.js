@@ -2,7 +2,9 @@ let $nombreTarjeta = document.querySelector("#nombreTarjeta")
 
 let $nombre = document.querySelector("#nombre")
 let $apellido = document.querySelector("#apellido")
-let $color = document.querySelector("#color")
+let $colorTarjeta = document.querySelector("#colorTarjeta")
+let $colorCaracteres = document.querySelector("#colorCaracteres")
+
 
 
 $nombre.addEventListener("keyup", function(e){
@@ -13,9 +15,14 @@ $apellido.addEventListener("keyup", function(e){
     validarTecla($apellido,e)
 })
 
-$color.addEventListener("keyup", function(e){
-    validarColorHexadecimal($color, e)
-    validarCantidadCaracteres($color)
+$colorTarjeta.addEventListener("keyup", function(e){
+    validarColorHexadecimal($colorTarjeta, e)
+    validarCantidadCaracteres($colorTarjeta)
+})
+
+$colorCaracteres.addEventListener("keyup", function(e){
+    validarColorHexadecimal($colorCaracteres, e)
+    validarCantidadCaracteres($colorCaracteres)
 })
 
 // Los input nombre y apellido solo pueden tener letras.
@@ -67,23 +74,73 @@ function validarCantidadCaracteres($input){
 
     if(cantidadCaracteres == 6){
         let color = $input.value
-        colorearTarjeta(color)
-
+        colorearTarjeta($input, color)
     }
 
 }
 
-function colorearTarjeta(color){
-    let tarjeta = document.querySelector("#tarjeta")
-    tarjeta.style.backgroundColor = "#" + color
+function colorearTarjeta($input, color){
+
+    let datoAColorear = $input.id 
+        
+    if(datoAColorear == "colorTarjeta"){
+        let tarjeta = document.querySelector("#tarjeta")
+        tarjeta.style.backgroundColor = "#" + color
+    }
+
+    if (datoAColorear == "colorCaracteres") {
+        let caracteres = document.querySelectorAll("#tarjeta p")
+        
+        caracteres.forEach( item => {
+            item.style.color = "#" + color
+        } )
+
+    }
+
+    console.log(datoAColorear);
+
 }
 
 // Escribe en la tarjeta
 function escribirTarjeta(inputClassName, datoAEscribir){
     
-    // Se utiliza el className ya que este es compartido entre el inpu y los datos de la tarjeta
+    // Se utiliza el className ya que este es compartido entre el input y los datos de la tarjeta
     // De esta forma la misma funcion edita toda la informacion
     let $informacion = document.querySelector(`#tarjeta .${inputClassName}`)
-    $informacion.innerText = datoAEscribir
+    $informacion.innerText = datoAEscribir.toUpperCase()
 }
+
+function obtenerFechas(){
+    let hoy = new Date()
+
+    let mes = hoy.getMonth() + 1;
+    console.log(mes);
+
+
+
+    let anio = hoy.getFullYear()
+    let anioCortado = anio % 100
+    console.log(anioCortado);
+
+    escribirFechas(mes, anioCortado)
+}
+
+function escribirFechas(mes, anio){
+
+    let fechas = document.querySelectorAll(".fechas p")
+
+    fechas.forEach( fecha =>{
+        fecha.innerText += ` ${mes}/${anio}`
+
+        // Se suma 5 al año porque la segunda fecha que se escribe es la de vencimiento que debe ser 
+        // posterior a la fecha de emision
+        anio += 5
+    })
+    console.log(fechas);
+
+}
+
+obtenerFechas()
+
+
 

@@ -3,8 +3,10 @@ h1{
 }
 
 p{
-    margin: 8px;
+    margin: 8px 0;
 }
+
+/* TARJETA */
 
 #tarjeta{
     border: 2px solid black;
@@ -33,7 +35,7 @@ p{
 #tarjeta .contenedorDatosTarjeta div{
     display: flex;
 
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 #tarjeta .fechas{
@@ -46,12 +48,28 @@ p{
     
 }
 
+/* FIN TARJETA */
+
+/* INPUTS USUARIO */
+
 #inputsUsuario{
     border: 2px solid black;
     border-radius: 5px;
 
     margin: auto;
 
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 400px;
+
+    display: flex;
+    flex-direction: column; 
 }
+
+#inputsUsuario div{
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 20px;
+    
+}
+/* FIN INPUTS USUARIO */

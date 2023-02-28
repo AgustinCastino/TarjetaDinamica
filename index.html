@@ -21,8 +21,8 @@
             </div>
     
             <div class="fechas">
-                <p id="fechaEmision">Desde 02/23</p>
-                <p id="fechaVencimiento"> Hasta 02/25</p>
+                <p id="fechaEmision">Desde </p>
+                <p id="fechaVencimiento"> Hasta </p>
             </div>
     
             <div class="identificacion">
@@ -34,7 +34,7 @@
 
     </div>
 
-    <section id="inputsUsuario">
+    <div id="inputsUsuario">
 
         <div id="datosPersonales">
             <label for=""> Nombre </label>
@@ -43,17 +43,20 @@
             <label for=""> Apellido </label>
             <input type="text" id="apellido" class="apellido">
 
+            <label for=""> Número de Tarjeta </label>
+            <input type="text" id="numeroTarjeta" class="numeroTarjeta" maxlength="19">
+
         </div>
 
         <div id="disenio">
-            <label for=""> Color </label>
-            <input type="text" id="color" maxlength="6">
+            <label for=""> Color (Hexadecimal) - <a href="https://htmlcolorcodes.com/es/" target="_blank"> Ayuda </a> </label>
+            <input type="text" id="colorTarjeta" maxlength="6">
 
-            <label for=""> Color caractéres</label>
+            <label for=""> Color caracteres (Hexadecimal)</label>
             <input type="text" id="colorCaracteres" maxlength="6">
         </div>
 
-    </section>
+    </div>
 
     <script src="main.js"></script>
 </body>
